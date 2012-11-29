@@ -34,6 +34,7 @@ security:
             logout:
                 path:   /demo/secured/logout
                 target: /demo/
+            anonymous: true
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
@@ -41,3 +42,4 @@ security:
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal/secure, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
+        - { path: ^/demo/secured, roles: ROLE_ADMIN, methods: [get,delete]}
